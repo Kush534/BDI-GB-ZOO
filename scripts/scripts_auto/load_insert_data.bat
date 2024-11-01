@@ -5,9 +5,9 @@ setlocal
 :: Configura las variables de conexión
 set "PGHOST=localhost"
 set "PGPORT=5432"
-set "PGUSER=adminzoo"
-set "PGPASSWORD=kush534"
-set "PGDATABASE=zoologico"
+set "PGUSER=*******"
+set "PGPASSWORD=*******"
+set "PGDATABASE=*******"
 
 :: Ejecuta cada archivo SQL en orden
 echo Ejecutando 01_tablas_independientes.sql...

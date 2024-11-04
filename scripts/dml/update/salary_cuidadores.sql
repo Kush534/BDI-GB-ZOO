@@ -1,0 +1,35 @@
+-- Agregamos el campo salario a la tabla cuidador
+--ALTER TABLE CUIDADOR 
+--ADD COLUMN SALARIO NUMERIC(10,2) NULL;
+
+-- Agregamos valores a el campo salario de cada cuidador
+UPDATE CUIDADOR
+SET SALARIO = CASE 
+    WHEN ID = 1 THEN 2500000.00
+    WHEN ID = 2 THEN 3000000.00
+    WHEN ID = 3 THEN 2700000.00
+    WHEN ID = 4 THEN 2800000.00
+    WHEN ID = 5 THEN 3200000.00
+    WHEN ID = 6 THEN 2600000.00
+    WHEN ID = 7 THEN 2900000.00
+    WHEN ID = 8 THEN 3100000.00
+    WHEN ID = 9 THEN 3300000.00
+    WHEN ID = 10 THEN 3400000.00
+    WHEN ID = 11 THEN 2500000.00
+    WHEN ID = 12 THEN 3000000.00
+    WHEN ID = 13 THEN 2750000.00
+    WHEN ID = 14 THEN 2900000.00
+    WHEN ID = 15 THEN 2850000.00
+    WHEN ID = 16 THEN 2950000.00
+    WHEN ID = 17 THEN 3100000.00
+    WHEN ID = 18 THEN 2600000.00
+    WHEN ID = 19 THEN 3250000.00
+    WHEN ID = 20 THEN 2700000.00
+    ELSE SALARIO -- Mantener el salario actual si no coincide con ninguna ID
+END
+WHERE ID IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+
+--verificamos que el nuevo campo se ha agragado de manera correcta
+SELECT ID, Nombre, SALARIO
+FROM CUIDADOR
+ORDER BY SALARIO DESC;  
